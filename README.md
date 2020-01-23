@@ -27,7 +27,7 @@ return $response;
 
 Inside the `pie_chart_data.json` file:
 
-```json
+```js
 {
     "data": [
         // Only the first element will be processed (one pie/donut per chart)
@@ -114,7 +114,7 @@ return $response;
 
 Inside the `lines_chart_data.json` file:
 
-```json
+```js
 {
     "data": [
         // All elements will be processed (several lines on the same chart)
@@ -242,7 +242,7 @@ return $response;
 
 Inside the `bars_chart_data.json` file:
 
-```json
+```js
 {
     "data": [
         // Only the first element will be processed (one set of bar per chart)
