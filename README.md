@@ -9,6 +9,8 @@
 ### Example
 
 ```php
+use Cws\Bundle\SVGChartBundle\SVGChart\SVGChart;
+
 $conf = json_decode(file_get_contents('pie_chart_data.json'));
 
 $response = new Response(
@@ -96,6 +98,8 @@ Inside the `pie_chart_data.json` file:
 ### Example
 
 ```php
+use Cws\Bundle\SVGChartBundle\SVGChart\SVGChart;
+
 $conf = json_decode(file_get_contents('lines_chart_data.json'));
 
 $response = new Response(
@@ -224,6 +228,8 @@ Inside the `lines_chart_data.json` file:
 ### Example
 
 ```php
+use Cws\Bundle\SVGChartBundle\SVGChart\SVGChart;
+
 $conf = json_decode(file_get_contents('bars_chart_data.json'));
 
 $response = new Response(
