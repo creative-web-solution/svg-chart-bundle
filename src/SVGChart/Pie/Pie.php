@@ -1,9 +1,9 @@
 <?php
 
-namespace CwsBundle\SVGChart\Pie;
+namespace Cws\Bundle\SVGChartBundle\SVGChart\Pie;
 
-use CwsBundle\SVGChart\ISVGChart;
-use CwsBundle\SVGChart\Tools\Point;
+use Cws\Bundle\SVGChartBundle\SVGChart\ISVGChart;
+use Cws\Bundle\SVGChartBundle\SVGChart\Tools\Point;
 use SVG\Nodes\Structures\SVGDocumentFragment;
 
 class Pie implements ISVGChart

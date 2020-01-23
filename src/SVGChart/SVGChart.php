@@ -1,16 +1,16 @@
 <?php
 
-namespace CwsBundle\SVGChart;
+namespace Cws\Bundle\SVGChartBundle\SVGChart;
 
 use SVG\SVG;
 
-use CwsBundle\SVGChart\Pie\Pie;
-use CwsBundle\SVGChart\Lines\Lines;
-use CwsBundle\SVGChart\Bars\Bars;
+use Cws\Bundle\SVGChartBundle\SVGChart\Pie\Pie;
+use Cws\Bundle\SVGChartBundle\SVGChart\Lines\Lines;
+use Cws\Bundle\SVGChartBundle\SVGChart\Bars\Bars;
 
-use CwsBundle\SVGChart\Legend\PieLegend;
+use Cws\Bundle\SVGChartBundle\SVGChart\Legend\PieLegend;
 
-use CwsBundle\SVGChart\Legend\LinesChart;
+use Cws\Bundle\SVGChartBundle\SVGChart\Legend\LinesChart;
 
 class SVGChart
 {

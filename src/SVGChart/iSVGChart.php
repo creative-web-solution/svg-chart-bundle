@@ -1,6 +1,6 @@
 <?php
 
-namespace CwsBundle\SVGChart;
+namespace Cws\Bundle\SVGChartBundle\SVGChart;
 
 use SVG\Nodes\Structures\SVGDocumentFragment;
 

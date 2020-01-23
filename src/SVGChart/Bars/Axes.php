@@ -1,32 +1,26 @@
 <?php
 
-namespace CwsBundle\SVGChart\Lines;
+namespace Cws\Bundle\SVGChartBundle\SVGChart\Bars;
 
 use SVG\Nodes\Structures\SVGDocumentFragment;
 use SVG\Nodes\Shapes\SVGLine;
-use CwsBundle\SVGChart\Tools\Point;
+use Cws\Bundle\SVGChartBundle\SVGChart\Tools\Point;
 
 class Axes
 {
     private $style;
-    private $gfxData;
-    private $globalGfxData;
     private $labelList;
 
     /**
-     * Lines chart axes constructor.
+     * Bars chart axes constructor.
      *
-     * @param Lines $linesChart
      * @param object $style
      */
-    public function __construct($linesChart, $style)
+    public function __construct($style)
     {
-        $this->style         = $style;
-        $this->gfxData       = $linesChart->getGfxData();
-        $this->globalGfxData = $linesChart->getGlobalGfxData();
-        $this->labelList     = array();
+        $this->style     = $style;
+        $this->labelList = array();
     }
-
 
     /**
      * Create a line between 2 points
@@ -41,7 +35,6 @@ class Axes
     private function getLine(Point $point1, Point $point2, $color, $thickness)
     {
         $line = new SVGLine($point1->x, $point1->y, $point2->x, $point2->y);
-
         $line->setStyle('stroke', $color);
         $line->setStyle('stroke-width', $thickness);
         $line->setStyle('fill', 'none');
@@ -50,7 +43,7 @@ class Axes
     }
 
     /**
-     * Return the abscissal line
+     * Return the abscissal line and append it to the SVG document
      *
      * @return SVGLine
      */
@@ -72,7 +65,7 @@ class Axes
     }
 
     /**
-     * Return the ordinate line
+     * Return the ordinate line and append it to the SVG document
      *
      * @return SVGLine
      */
@@ -110,14 +103,14 @@ class Axes
 
         for ($linePos = $step; $linePos <= $delta; $linePos = $linePos + $step) {
             $point1 = new Point(
-                $this->globalGfxData->left,
-                $this->globalGfxData->bottom - round(
-                    $linePos * $this->globalGfxData->height / $delta,
+                $this->style->canvas->left,
+                $this->style->canvas->top + $this->style->canvas->height - round(
+                    $linePos * $this->style->canvas->height / $delta,
                     3
                 )
             );
 
-            $point2 = new Point($this->globalGfxData->right, $point1->y);
+            $point2 = new Point($this->style->canvas->left + $this->style->canvas->width, $point1->y);
 
             $svgDocument->addChild(
                 $this->getLine(
@@ -130,35 +123,9 @@ class Axes
         }
     }
 
-    /**
-     * Create all the vertical lines of the grid and append it to the SVG document
-     *
-     * @param SVGDocumentFragment $svgDocument
-     */
-    private function createVerticalGridLines(SVGDocumentFragment $svgDocument)
-    {
-        foreach ($this->globalGfxData->ordMinMax as $index => $ordData) {
-            $point1 = new Point(
-                $this->globalGfxData->absSteps[ $index ],
-                $this->globalGfxData->bottom
-            );
-
-            $point2 = new Point($point1->x, $ordData->max);
-
-            $svgDocument->addChild(
-                $this->getLine(
-                    $point1,
-                    $point2,
-                    $this->style->grid->vertical->color,
-                    $this->style->grid->vertical->thickness
-                )
-            );
-        }
-    }
-
 
     /**
-     * Create grid and axes lines and append it to the SVG document
+     * Create and add to the SVG document all background lines and grids
      *
      * @param SVGDocumentFragment $svgDocument
      *
@@ -168,9 +135,6 @@ class Axes
     {
         if ($this->style->grid->horizontal->isDisplayed) {
             $this->createHorizontalGridLines($svgDocument);
-        }
-        if ($this->style->grid->vertical->isDisplayed) {
-            $this->createVerticalGridLines($svgDocument);
         }
         if ($this->style->axes->abs->isDisplayed) {
             $svgDocument->addChild($this->createAbs());

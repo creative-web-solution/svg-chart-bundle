@@ -1,10 +1,10 @@
 <?php
 
-namespace CwsBundle\SVGChart\Pie;
+namespace Cws\Bundle\SVGChartBundle\SVGChart\Pie;
 
-use CwsBundle\SVGChart\Tools\Point;
-use CwsBundle\SVGChart\Tools\Line;
-use CwsBundle\SVGChart\Tools\Arc;
+use Cws\Bundle\SVGChartBundle\SVGChart\Tools\Point;
+use Cws\Bundle\SVGChartBundle\SVGChart\Tools\Line;
+use Cws\Bundle\SVGChartBundle\SVGChart\Tools\Arc;
 use SVG\Nodes\Shapes\SVGPolyline;
 use SVG\Nodes\Shapes\SVGPath;
 

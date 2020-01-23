@@ -1,10 +1,10 @@
 <?php
 
-namespace CwsBundle\SVGChart\Lines;
+namespace Cws\Bundle\SVGChartBundle\SVGChart\Lines;
 
-use CwsBundle\SVGChart\IChartLegend;
-use CwsBundle\SVGChart\Tools\Point;
-use CwsBundle\SVGChart\Tools\Text;
+use Cws\Bundle\SVGChartBundle\SVGChart\IChartLegend;
+use Cws\Bundle\SVGChartBundle\SVGChart\Tools\Point;
+use Cws\Bundle\SVGChartBundle\SVGChart\Tools\Text;
 
 class Legend implements IChartLegend
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace CwsBundle\SVGChart\Tools;
+namespace Cws\Bundle\SVGChartBundle\SVGChart\Tools;
 
 class Text
 {

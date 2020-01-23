@@ -1,10 +1,10 @@
 <?php
 
-namespace CwsBundle\SVGChart\Lines;
+namespace Cws\Bundle\SVGChartBundle\SVGChart\Lines;
 
-use CwsBundle\SVGChart\Tools\Point;
-use CwsBundle\SVGChart\Tools\Line;
-use CwsBundle\SVGChart\ISVGChart;
+use Cws\Bundle\SVGChartBundle\SVGChart\Tools\Point;
+use Cws\Bundle\SVGChartBundle\SVGChart\Tools\Line;
+use Cws\Bundle\SVGChartBundle\SVGChart\ISVGChart;
 use SVG\Nodes\Structures\SVGDocumentFragment;
 use SVG\Nodes\Structures\SVGGroup;
 use SVG\Nodes\Shapes\SVGPath;

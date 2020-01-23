@@ -1,9 +1,9 @@
 <?php
 
-namespace CwsBundle\SVGChart\Bars;
+namespace Cws\Bundle\SVGChartBundle\SVGChart\Bars;
 
-use CwsBundle\SVGChart\ISVGChart;
-use CwsBundle\SVGChart\Tools\Point;
+use Cws\Bundle\SVGChartBundle\SVGChart\ISVGChart;
+use Cws\Bundle\SVGChartBundle\SVGChart\Tools\Point;
 use SVG\Nodes\Structures\SVGDocumentFragment;
 
 class Bars implements ISVGChart

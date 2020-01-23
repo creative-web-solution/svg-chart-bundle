@@ -1,0 +1,34 @@
+{
+    "name": "creative-web-solution/svg-chart-bundle",
+    "description": "Light and simple SVG chart for Symfony.",
+    "keywords": [
+        "creative-web-solution",
+        "cws",
+        "bundle",
+        "symfony4",
+        "chart"
+    ],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "CWS",
+            "email": "cws-info@cws-studio.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.1",
+        "symfony/cache": "^4.0 || ^4.1 || ^4.2",
+        "symfony/dependency-injection": "^4.0 || ^4.1 || ^4.2",
+        "symfony/finder": "^4.0 || ^4.1 || ^4.2",
+        "symfony/framework-bundle": "^4.0 || ^4.1 || ^4.2",
+        "symfony/yaml": "^4.0 || ^4.1 || ^4.2",
+        "meyfa/php-svg": "¨^0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cws\\Bundle\\SVGChartBundle\\": "src/"
+        }
+    }
+}
