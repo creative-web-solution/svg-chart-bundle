@@ -1,6 +1,7 @@
 {
     "name": "creative-web-solution/svg-chart-bundle",
     "description": "Light and simple SVG chart for Symfony.",
+    "version": "0.0.1",
     "keywords": [
         "creative-web-solution",
         "cws",
