@@ -1,0 +1,36 @@
+# OSX
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# IDE
+.idea
+*.sublime-workspace
+*.sublime-project
+.vscode
+
+# Misc
+.~lock*
+.svn
+
+!.gitkeep
