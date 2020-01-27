@@ -20,11 +20,6 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^7.1",
-        "symfony/cache": "^4.0 || ^4.1 || ^4.2",
-        "symfony/dependency-injection": "^4.0 || ^4.1 || ^4.2",
-        "symfony/finder": "^4.0 || ^4.1 || ^4.2",
-        "symfony/framework-bundle": "^4.0 || ^4.1 || ^4.2",
-        "symfony/yaml": "^4.0 || ^4.1 || ^4.2",
         "meyfa/php-svg": "^0.9"
     },
     "autoload": {
