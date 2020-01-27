@@ -25,7 +25,7 @@
         "symfony/finder": "^4.0 || ^4.1 || ^4.2",
         "symfony/framework-bundle": "^4.0 || ^4.1 || ^4.2",
         "symfony/yaml": "^4.0 || ^4.1 || ^4.2",
-        "meyfa/php-svg": "¨^0.9"
+        "meyfa/php-svg": "^0.9"
     },
     "autoload": {
         "psr-4": {
