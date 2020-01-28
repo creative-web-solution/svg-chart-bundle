@@ -54,14 +54,20 @@ Inside the `pie_chart_data.json` file:
         // Display of the labels
         "legend" : {
             "labelCssClass"  : "label label-slice",
-            "lineColor"      : "#000000",
             "textHeight"     : 30,
             "textMaxWidth"   : 100,
-            "cssLegendLineClass" : "legend-line",
+
+            // Optional
+            "textTemplate"   : "<div {{ATTR}}>{{TEXT}}</div>",
+
+            // Line between the legend and the donut slice
+            "hasLine"        : true,
+            "lineColor"      : "#000000",
+            "lineCssClass"   : "legend-line",
 
             // Only used on pie mode.
             // Position of the start of the legend line between the border and the center of the chart in percent (value between 0 and 1)
-            "legendLineOffset"   : 0.75
+            "lineOffset"     : 0.75
         },
 
         // Only used on donut mode
