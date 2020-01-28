@@ -10,6 +10,7 @@ class Text
     public $cssClass;
     public $color;
     public $isRightPositioned;
+    public $template;
 
     /**
      * Text constructor
@@ -20,8 +21,17 @@ class Text
      * @param string $color
      * @param boolean $isRightPositioned
      * @param string $id
+     * @param string $template
      */
-    public function __construct($text, Point $coords, $cssClass, $color = '', $isRightPositioned = false, $id = null)
+    public function __construct(
+        $text,
+        Point $coords,
+        $cssClass,
+        $color = '',
+        $isRightPositioned = false,
+        $id = null,
+        $template = '<div {{ATTR}}>{{TEXT}}</div>'
+    )
     {
         $this->text = $text;
         $this->coords = $coords;
@@ -29,6 +39,7 @@ class Text
         $this->color = $color;
         $this->isRightPositioned = $isRightPositioned;
         $this->id = $id;
+        $this->template = $template;
     }
 
     /**
@@ -38,30 +49,33 @@ class Text
      */
     public function create()
     {
-        $result = array();
+        $attr = array();
 
-        $result[] = '<div ';
         if (isset($this->id)) {
-            $result[] = "data-id=\"$this->id\" ";
+            $attr[] = "data-id=\"$this->id\"";
         }
-        $result[] = "class=\"$this->cssClass\" ";
-        $result[] = 'style="';
-        $result[] = 'top:'.$this->coords->y.'px;';
 
+        $attr[] = "class=\"$this->cssClass\"";
+
+        $style = 'style="';
+        $style .= 'top:'.$this->coords->y.'px;';
         if ($this->isRightPositioned) {
-            $result[] = 'right:'.$this->coords->x.'px;';
+            $style .= 'right:'.$this->coords->x.'px;';
         } else {
-            $result[] = 'left:'.$this->coords->x.'px;';
+            $style .= 'left:'.$this->coords->x.'px;';
         }
         if ($this->color != '') {
-            $result[] = 'color:'.$this->color.';';
+            $style .= 'color:'.$this->color.';';
         }
+        $style .= '"';
 
-        $result[] = '"';
-        $result[] = '>';
-        $result[] = $this->text;
-        $result[] = '</div>';
+        $attr[] = $style;
 
-        return implode('', $result);
+
+        return str_replace(
+            array('{{ATTR}}', '{{TEXT}}'),
+            array(implode(' ', $attr), $this->text),
+            $this->template
+        );
     }
 }

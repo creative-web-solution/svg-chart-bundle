@@ -60,7 +60,13 @@ class Legend implements IChartLegend
             $cssClass .= ' alt';
         }
 
-        $position = $gfxData->legendLinePoints->point2;
+        if ($this->style->legend->hasLine) {
+            $position = $gfxData->legendLinePoints->point2;
+        }
+        else {
+            $position = $gfxData->legendLinePoints->point1;
+        }
+
 
         $text = new Text(
             $gfxData->data->label,
@@ -68,7 +74,8 @@ class Legend implements IChartLegend
             $cssClass,
             $gfxData->data->color,
             false,
-            $gfxData->data->id
+            isset($gfxData->data->id) ? $gfxData->data->id : null,
+            isset($this->style->legend->textTemplate) ? $this->style->legend->textTemplate : null
         );
 
         return $text->create();

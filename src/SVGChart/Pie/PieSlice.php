@@ -24,7 +24,7 @@ class PieSlice
     public function __construct($data, $style)
     {
         $this->data    = $data->data;
-        $this->id      = $this->data->id;
+        $this->id      = isset($this->data->id) ? $this->data->id : '';
         $this->style   = $style;
         $this->mode    = $style->mode;
         $this->gfxData = $this->computeGfxData($data, $style);
@@ -66,7 +66,7 @@ class PieSlice
             $internalArcRadius  = $style->radius;
             $centerArcPoint     = Point::angleToPoint(
                 $center,
-                $style->radius * $style->legend->legendLineOffset,
+                $style->radius * $style->legend->lineOffset,
                 $centerAngle
             );
         }
@@ -201,8 +201,8 @@ class PieSlice
             $line->setAttribute('data-id', $this->data->id);
         }
 
-        if (isset($this->style->legend->cssLegendLineClass)) {
-            $line->setAttribute('class', $this->style->legend->cssLegendLineClass);
+        if (isset($this->style->legend->lineCssClass)) {
+            $line->setAttribute('class', $this->style->legend->lineCssClass);
         }
 
         return $line;

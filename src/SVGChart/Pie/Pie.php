@@ -172,7 +172,7 @@ class Pie implements ISVGChart
             $svgDocument->addChild($slice->create());
         }
 
-        if ($this->hasLegend) {
+        if ($this->hasLegend && $this->style->legend->hasLine) {
             foreach ($this->gfxData->sliceList as $slice) {
                 $svgDocument->addChild($slice->getLegendLine());
             }
