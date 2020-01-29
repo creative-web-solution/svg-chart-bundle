@@ -1,5 +1,7 @@
 # SVG Chart
 
+![Charts example](chart.png)
+
 ## Symfony requirement
 
 * [meyfa/php-svg](https://packagist.org/packages/meyfa/php-svg)
@@ -171,8 +173,10 @@ Inside the `lines_chart_data.json` file:
                 "labelCssClass"   : "label label-abs",
                 "labels" : [
                     {
-                        "value" : 1,
                         "label" : "Jan."
+                    },
+                    {
+                        "label" : "Feb."
                     },
                     ...
                 ]
@@ -288,8 +292,10 @@ Inside the `bars_chart_data.json` file:
 
                 "labels" : [
                     {
-                        "value" : 1,
                         "label" : "Jan."
+                    },
+                    {
+                        "label" : "Feb."
                     },
                     ...
                 ]
